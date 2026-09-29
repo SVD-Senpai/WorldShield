@@ -1,4 +1,3 @@
-Yep bro 😭 **one box, full version, zero extra explanation.** Copy the entire thing and paste it directly into `README.md`.
 
 ````markdown
 # 🛡️ WorldShield
