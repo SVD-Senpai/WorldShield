@@ -1,23 +1,4 @@
 
-````markdown
-# 🛡️ WorldShield
-
-### Evidence-Driven Security Assessment for World Monitor
-
-<p align="center">
-
-**Smart India Hackathon 2026 · SIH26163 · Software**
-
-<br>
-
-`ASSESS` → `DETECT` → `VALIDATE` → `EXPLAIN` → `REMEDIATE` → `RE-TEST`
-
-</p>
-
----
-
-## 🌐 Overview
-
 **WorldShield** is an evidence-driven security assessment platform designed for the authorized security assessment of the **World Monitor application**.
 
 Modern applications expose multiple security surfaces across authentication, authorization, APIs, client-side behavior, dependencies, configuration, and data handling. WorldShield brings these assessment activities into a single structured workflow.
@@ -503,16 +484,6 @@ The goal is to create **security findings that can be understood, validated, act
 **Prototype / Hackathon Development**
 
 The current project focuses on demonstrating the complete security assessment lifecycle and the evidence-driven AI workflow.
-
----
-
-# 👥 Team
-
-**Team Name:** `YOUR TEAM NAME`
-
-**Team ID:** `YOUR TEAM ID`
-
-**Institution:** `YOUR INSTITUTION`
 
 ---
 
