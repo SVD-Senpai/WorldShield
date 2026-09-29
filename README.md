@@ -1,114 +1,529 @@
-# WORLDShield — Security Assessment Companion for World Monitor
+Yep bro 😭 **one box, full version, zero extra explanation.** Copy the entire thing and paste it directly into `README.md`.
 
-**Problem Statement:** SIH 26163 — Security Assessment of the World Monitor application  
-**Build Target:** Authorized local instance of World Monitor (`target-worldmonitor/`)  
-**Prototype Tech Stack:** React 19, TypeScript, Vite, Lucide Icons, Custom Security Console UI  
+````markdown
+# 🛡️ WorldShield
+
+### Evidence-Driven Security Assessment for World Monitor
+
+<p align="center">
+
+**Smart India Hackathon 2026 · SIH26163 · Software**
+
+<br>
+
+`ASSESS` → `DETECT` → `VALIDATE` → `EXPLAIN` → `REMEDIATE` → `RE-TEST`
+
+</p>
 
 ---
 
-## 1. What WorldShield Does
+## 🌐 Overview
 
-WorldShield is a dedicated, non-destructive security assessment dashboard and companion built for evaluators analyzing an authorized local instance of World Monitor.
+**WorldShield** is an evidence-driven security assessment platform designed for the authorized security assessment of the **World Monitor application**.
 
-Instead of pretending to be a generic automated exploit scanner or hallucinating vulnerabilities, WorldShield enforces the **Strict Security Truth Rules**:
-1. **Deterministic Static & Signal Detection:** Identifies candidate signals across 8 security categories (secrets, dangerous DOM sinks, client web storage, dependency advisories, authentication/cookies, authorization/routes, API surface/SSRF, and CORS/headers).
-2. **Signal ≠ Vulnerability:** Initial candidate signals are classified as `Needs Validation` or `Potential`.
-3. **AI Analyst Layer:** An evidence-grounded AI analyst layer explains technical evidence in plain English, calculates business/system impact, drafts code patches, and drafts report text—strictly grounded in observed code without hallucinating CVEs or paths.
-4. **Human Validation & Re-testing:** The assessor explicitly confirms or rejects findings, executes simulated verification re-tests (marking them `Remediated / Passed`), and compiles a formal exportable assessment report.
+Modern applications expose multiple security surfaces across authentication, authorization, APIs, client-side behavior, dependencies, configuration, and data handling. WorldShield brings these assessment activities into a single structured workflow.
+
+The core idea is simple:
+
+> **Security checks produce evidence. AI interprets the evidence. Humans validate the finding. Re-testing verifies the outcome.**
+
+WorldShield is therefore designed around **evidence, validation, remediation, and re-testing**, rather than treating AI-generated security claims as confirmed vulnerabilities.
 
 ---
 
-## 2. Quickstart: How to Run
+## 🎯 Problem Statement
 
-WorldShield is pre-configured and runnable out of the box:
+### SIH26163 — Security Assessment of the World Monitor Application
 
-```bash
-# Navigate to prototype directory
-cd worldshield
+The assessment focuses on identifying and evaluating security issues across areas such as:
 
-# Install dependencies (already installed)
-npm install
+- 🔐 Authentication & Session Management
+- 👤 Authorization & Access Control
+- 🌐 API Security & Input Handling
+- 🖥️ Client-Side Security
+- 🔑 Secrets & Sensitive Data Handling
+- 📦 Dependency Security
+- ⚙️ Security Configuration
 
-# Start local assessment server
-npm run dev -- --port 5173
+For each potential issue, the platform aims to provide:
+
+- A clear finding
+- Affected component
+- Severity
+- Evidence
+- Safe reproduction steps
+- Potential impact
+- Remediation guidance
+- Re-test status
+
+---
+
+# ⚡ WorldShield Workflow
+
+```text
+                         ┌─────────────────────┐
+                         │    WORLD MONITOR     │
+                         │   Authorized Target  │
+                         └──────────┬──────────┘
+                                    │
+                                    ▼
+                         ┌─────────────────────┐
+                         │ WORLDSHIELD ENGINE  │
+                         │ Security Assessment │
+                         └──────────┬──────────┘
+                                    │
+                    ┌───────────────┼───────────────┐
+                    ▼               ▼               ▼
+              Code Checks      API Checks      Access Checks
+                    │               │               │
+                    └───────────────┼───────────────┘
+                                    ▼
+                         ┌─────────────────────┐
+                         │  SECURITY SIGNAL    │
+                         └──────────┬──────────┘
+                                    │
+                                    ▼
+                         ┌─────────────────────┐
+                         │ VALIDATION +        │
+                         │ EVIDENCE            │
+                         └──────────┬──────────┘
+                                    │
+                                    ▼
+                         ┌─────────────────────┐
+                         │     AI ANALYST      │
+                         │ Explain • Analyze    │
+                         │ Remediation Support  │
+                         └──────────┬──────────┘
+                                    │
+                                    ▼
+                         ┌─────────────────────┐
+                         │ IMPACT +            │
+                         │ REMEDIATION         │
+                         └──────────┬──────────┘
+                                    │
+                                    ▼
+                         ┌─────────────────────┐
+                         │       RE-TEST       │
+                         └──────────┬──────────┘
+                                    │
+                                    ▼
+                         ┌─────────────────────┐
+                         │ SECURITY ASSESSMENT │
+                         │       REPORT        │
+                         └─────────────────────┘
+````
+
+---
+
+# 🧠 Evidence-First AI
+
+WorldShield does **not** position AI as an autonomous hacker.
+
+Instead, the system separates **security evidence** from **AI interpretation**.
+
+### 🔎 Security Assessment
+
+Security checks inspect the authorized target and produce observable signals and evidence.
+
+### 🤖 AI Analyst
+
+AI uses the available evidence to:
+
+* Explain the finding
+* Summarize potential impact
+* Assist with remediation
+* Help generate understandable reports
+
+### 👤 Human Validation
+
+The security assessor validates whether the observed behavior actually represents a security issue.
+
+### 🔁 Re-Test
+
+After remediation, the issue can be assessed again to determine whether it remains present.
+
+---
+
+## 🚦 AI Guardrails
+
+### AI CAN
+
+✅ Explain verified evidence
+✅ Summarize potential impact
+✅ Suggest remediation
+✅ Assist report generation
+✅ Help assessors understand technical findings
+
+### AI CANNOT
+
+❌ Invent evidence
+❌ Fabricate vulnerabilities
+❌ Invent API responses
+❌ Claim unverified exploitation
+❌ Replace security validation
+
+> **AI assists interpretation. Evidence remains the source of truth.**
+
+---
+
+# 🔍 Assessment Surface
+
+| Security Area       | Assessment Focus                                              |
+| ------------------- | ------------------------------------------------------------- |
+| 🔐 Authentication   | Login, authentication and session mechanisms                  |
+| 👤 Authorization    | Access control and privilege enforcement                      |
+| 🌐 APIs             | API surfaces and input handling                               |
+| 🖥️ Client Security | Client-side security controls and data handling               |
+| 🔑 Secrets          | Potential exposure of credentials and sensitive configuration |
+| 📦 Dependencies     | Dependency-related security risks                             |
+| ⚙️ Configuration    | Security-related application configuration                    |
+
+---
+
+# 🏗️ System Architecture
+
+```text
+┌──────────────────────────────────────────────────────┐
+│                  WORLDSHIELD UI                      │
+│                React + TypeScript                    │
+└─────────────────────────┬────────────────────────────┘
+                          │
+                          ▼
+┌──────────────────────────────────────────────────────┐
+│              ASSESSMENT ORCHESTRATOR                 │
+│             Workflow + Finding State                 │
+└─────────────────────────┬────────────────────────────┘
+                          │
+              ┌───────────┼───────────┐
+              ▼           ▼           ▼
+        ┌──────────┐ ┌──────────┐ ┌──────────┐
+        │  Static  │ │   API    │ │  Access  │
+        │  Checks  │ │  Checks  │ │  Checks  │
+        └────┬─────┘ └────┬─────┘ └────┬─────┘
+             │            │            │
+             └────────────┼────────────┘
+                          ▼
+                ┌──────────────────┐
+                │  EVIDENCE LAYER  │
+                └────────┬─────────┘
+                         │
+                         ▼
+                ┌──────────────────┐
+                │    AI ANALYST    │
+                │                  │
+                │ Explain          │
+                │ Impact           │
+                │ Remediation      │
+                └────────┬─────────┘
+                         │
+                         ▼
+                ┌──────────────────┐
+                │ RE-TEST + REPORT │
+                └──────────────────┘
 ```
 
-Open `http://localhost:5173` in your browser.
+---
 
-To verify a production build:
-```bash
-npm run build
-npm run preview
+# 🧩 Core Components
+
+### 🖥️ Assessment Dashboard
+
+Provides a centralized view of the security assessment, including:
+
+* Assessment status
+* Security checks
+* Findings
+* Severity
+* Validation state
+* Re-test status
+
+### 🔎 Assessment Pipeline
+
+Organizes checks across different security surfaces.
+
+```text
+Repository Analysis
+        ↓
+Dependency Checks
+        ↓
+Client Security
+        ↓
+Authentication
+        ↓
+Authorization
+        ↓
+API Security
+        ↓
+Configuration
 ```
+
+### 📋 Finding Management
+
+Each finding can contain:
+
+```text
+Finding ID
+Title
+Severity
+Category
+Status
+Affected Component
+Location
+Description
+Evidence
+Safe Reproduction
+Impact
+Remediation
+Re-Test Status
+```
+
+### 🤖 AI Analyst
+
+An evidence-bound analysis layer that assists the assessor with understanding and communicating validated findings.
+
+### 🔁 Re-Test Engine
+
+Tracks the state of findings after remediation.
+
+```text
+Finding
+   ↓
+Fix
+   ↓
+Re-Assess
+   ↓
+┌───────────────┐
+│               │
+▼               ▼
+PASS       STILL PRESENT
+```
+
+### 📄 Security Report
+
+Transforms structured findings into an assessment report containing:
+
+* Scope
+* Methodology
+* Findings
+* Evidence
+* Impact
+* Remediation
+* Re-test results
 
 ---
 
-## 3. The Exact 2-Minute Demo Script
+# 📋 Finding Lifecycle
 
-Follow this step-by-step click sequence for presentations and judging evaluations:
+A security signal is **not automatically considered a confirmed vulnerability**.
 
-1. **Open WorldShield Dashboard:**
-   - Present the header: Target is marked as `Local Authorized World Monitor`, Scope is `Source Code + Client + API Surfaces`, and the Agentic Workflow progress strip is active.
+```text
+┌───────────────────┐
+│ Potential Signal  │
+└─────────┬─────────┘
+          ↓
+┌───────────────────┐
+│ Needs Validation  │
+└─────────┬─────────┘
+          ↓
+┌───────────────────┐
+│ Evidence Collected│
+└─────────┬─────────┘
+          ↓
+┌───────────────────┐
+│ Confirmed Finding │
+└─────────┬─────────┘
+          ↓
+┌───────────────────┐
+│    Remediation    │
+└─────────┬─────────┘
+          ↓
+┌───────────────────┐
+│      Re-Test      │
+└─────────┬─────────┘
+          ↓
+     ┌────┴────┐
+     ▼         ▼
+   PASS    STILL PRESENT
+```
 
-2. **Click "Run Assessment":**
-   - Watch the agent workflow transition: *Understand Target* → *Plan Checks* → *Run Checks*.
-   - In the left **Assessment Pipeline**, watch all 8 security checks progress in real-time from `IDLE` to `RUNNING` (with spinners) to `COMPLETED` (with finding count badges).
-   - Announce: *"The scanner produces candidate signals. In accordance with SIH assessment rules, it does not automatically call them confirmed vulnerabilities."*
+This creates a traceable chain from:
 
-3. **Select a Finding:**
-   - In the center **Security Findings** table, select **`WS-001` (Client-Side Sensitive Token Storage Review)** or **`WS-002` (Unsafe HTML Rendering Pattern)**.
-   - Note the **`DEMO / NOT VERIFIED`** watermark badge proving strict adherence to the Truth Rules.
-
-4. **Review Evidence & Severity Reasoning:**
-   - In the right **Finding Detail** panel, inspect:
-     - Component & File Location (`src/settings-main.ts:142` or `src/features/rss/feed-card.ts:88`)
-     - **Assessor Severity Reasoning Breakdown:** Attack Precondition, Affected Asset, Confidentiality, Integrity, and Confidence level.
-     - **Observed Code Evidence:** Exact source code lines and controlled reproduction steps.
-
-5. **Click "Analyze Evidence" (or AI Analyst Tab):**
-   - The **AI Security Analyst** synthesizes the technical evidence.
-   - Review: Plain-language summary, business/system impact, step-by-step remediation guide, and proposed code fix patch.
-
-6. **Click "Validate Finding":**
-   - Demonstrate human-in-the-loop validation: The status chip changes from `Needs Validation` to `Confirmed`. Notice the summary card for Confirmed Findings updates to reflect assessor validation.
-
-7. **Click "Re-test":**
-   - Click **Re-test**. The verification test executes, transitioning the finding to **`Remediated & Passed`** with a full before/after audit trail banner.
-
-8. **Open "Assessment Report":**
-   - Click **Assessment Report** in the top header.
-   - Show the formal structured executive report: Target scope, methodology, final status metrics (Confirmed, Needs Validation, Potential, Remediated), detailed finding documentation, and signed assessor sign-off block.
-   - Click **Export Markdown** or **Print / PDF** to demonstrate report generation.
+**Signal → Evidence → Validation → Action → Re-Test**
 
 ---
 
-## 4. Architecture & Directory Structure
+# 🛠️ Technology Stack
 
+### Frontend
+
+* React
+* TypeScript
+* Vite
+
+### Security Assessment
+
+* Static Analysis
+* Dependency Checks
+* API Checks
+* Authentication Checks
+* Authorization Checks
+* Security Configuration Checks
+
+### AI Analyst
+
+* Evidence Analysis
+* Impact Explanation
+* Remediation Assistance
+* Report Generation Assistance
+
+### Reporting
+
+* Structured Findings
+* Evidence Records
+* Re-Test History
+* Security Assessment Reports
+
+---
+
+# 🎯 Design Principles
+
+## Evidence First
+
+Potential security issues should be supported by observable evidence.
+
+## Human Validation
+
+Automated signals require appropriate validation before being treated as confirmed findings.
+
+## Controlled Testing
+
+Assessment should remain within authorized and controlled environments.
+
+## Explainable AI
+
+AI should help assessors understand and communicate evidence rather than replace the assessment process.
+
+## Re-Testability
+
+A security finding should not end when remediation is proposed. The system should support checking whether the issue remains present.
+
+---
+
+# 🔐 Responsible Security
+
+WorldShield is intended for:
+
+* Authorized security assessments
+* Local development environments
+* Controlled testing environments
+* Educational cybersecurity research
+* Security validation with appropriate permission
+
+### ⚠️ Important
+
+Only assess systems for which you have explicit authorization.
+
+Do not use WorldShield to access, exploit, disrupt, modify, or interfere with unauthorized systems, users, or data.
+
+---
+
+# 📚 Research Foundation
+
+WorldShield's assessment approach is informed by:
+
+### World Monitor Security Policy
+
+Used to understand documented security-relevant areas of the target application and its assessment surface.
+
+### World Monitor Repository & Documentation
+
+Used to understand the application's technical architecture and relevant components.
+
+### OWASP Web Security Testing Guide
+
+Used as a methodological reference for areas including:
+
+* Authentication
+* Authorization
+* Session Management
+* Client-Side Security
+* API Testing
+
+### Smart India Hackathon 2026 Resources
+
+Used to guide:
+
+* Problem-solution alignment
+* Technical depth
+* Feasibility
+* Evidence-based claims
+* Product presentation
+
+---
+
+# 🚀 Project Vision
+
+WorldShield is built around a simple idea:
+
+```text
+Security Signal
+       ↓
+Technical Evidence
+       ↓
+Human Understanding
+       ↓
+Actionable Remediation
+       ↓
+Verified Re-Test
 ```
-worldshield/
-├── src/
-│   ├── components/
-│   │   ├── Header.tsx           # Logo, target scope, run button, report launcher
-│   │   ├── WorkflowProgress.tsx # 7-stage agentic workflow progress strip
-│   │   ├── SummaryCards.tsx     # Factual status and count metrics (no fake score)
-│   │   ├── CheckPipeline.tsx    # 8 security check suites with live status indicators
-│   │   ├── FindingsTable.tsx    # Candidate findings with filters, severity & status chips
-│   │   ├── FindingDetail.tsx    # Visual center: evidence, reasoning, validation, re-test
-│   │   ├── EvidencePanel.tsx    # Line-numbered code snippet and reproduction steps
-│   │   ├── AIAnalyst.tsx        # Grounded AI analysis, impact, and code patch
-│   │   └── ReportPanel.tsx      # Formal executive report modal with Markdown/Print export
-│   ├── data/
-│   │   └── demoFindings.ts      # Grounded benchmark findings and check definitions
-│   ├── services/
-│   │   ├── scanner.ts           # Deterministic assessment pipeline runner
-│   │   └── aiAnalyst.ts         # Evidence-grounded analysis & remediation generator
-│   ├── types/
-│   │   └── finding.ts           # Strict TypeScript data models
-│   ├── App.tsx                  # Main reactive application controller
-│   ├── index.css                # Dark cybersecurity console styling
-│   └── main.tsx                 # React DOM root entry
-├── index.html
-├── package.json
-├── tsconfig.json
-└── vite.config.ts
+
+The goal is not simply to generate more security alerts.
+
+The goal is to create **security findings that can be understood, validated, acted upon, and re-tested.**
+
+---
+
+# 🏆 Smart India Hackathon 2026
+
+| Detail               | Information                |
+| -------------------- | -------------------------- |
+| 🏆 Event             | Smart India Hackathon 2026 |
+| 🆔 Problem Statement | SIH26163                   |
+| 🛡️ Project          | WorldShield                |
+| 💻 Category          | Software                   |
+| 🎯 Domain            | Cybersecurity              |
+
+### Core Assessment Lifecycle
+
+> **Assess → Validate → Explain → Remediate → Re-Test**
+
+---
+
+# 🚧 Project Status
+
+**Prototype / Hackathon Development**
+
+The current project focuses on demonstrating the complete security assessment lifecycle and the evidence-driven AI workflow.
+
+---
+
+# 👥 Team
+
+**Team Name:** `YOUR TEAM NAME`
+
+**Team ID:** `YOUR TEAM ID`
+
+**Institution:** `YOUR INSTITUTION`
+
+---
+
+<p align="center">
+
+### 🛡️ WORLDSHIELD
+
+**Evidence over assumptions.**
+**Validation over speculation.**
+**Security findings that can be re-tested.**
+
+</p>
 ```
