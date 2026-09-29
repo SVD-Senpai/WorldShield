@@ -13,7 +13,7 @@ WorldShield is therefore designed around **evidence, validation, remediation, an
 
 ## 🎯 Problem Statement
 
-### SIH26163 — Security Assessment of the World Monitor Application
+### SIH26163 - Security Assessment of the World Monitor Application
 
 The assessment focuses on identifying and evaluating security issues across areas such as:
 
@@ -463,37 +463,3 @@ The goal is to create **security findings that can be understood, validated, act
 
 ---
 
-# 🏆 Smart India Hackathon 2026
-
-| Detail               | Information                |
-| -------------------- | -------------------------- |
-| 🏆 Event             | Smart India Hackathon 2026 |
-| 🆔 Problem Statement | SIH26163                   |
-| 🛡️ Project          | WorldShield                |
-| 💻 Category          | Software                   |
-| 🎯 Domain            | Cybersecurity              |
-
-### Core Assessment Lifecycle
-
-> **Assess → Validate → Explain → Remediate → Re-Test**
-
----
-
-# 🚧 Project Status
-
-**Prototype / Hackathon Development**
-
-The current project focuses on demonstrating the complete security assessment lifecycle and the evidence-driven AI workflow.
-
----
-
-<p align="center">
-
-### 🛡️ WORLDSHIELD
-
-**Evidence over assumptions.**
-**Validation over speculation.**
-**Security findings that can be re-tested.**
-
-</p>
-```
